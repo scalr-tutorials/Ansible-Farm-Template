@@ -1,0 +1,16 @@
+---
+###
+- name: Build Farm from Farm Template
+  hosts: localhost
+  connection: local
+  become: yes
+  become_method: sudo
+  become_user: root
+  gather_facts: false
+  tasks:
+   - debug:
+      msg: Pulling farm template from Git
+   - include: git_clone.yml
+   - debug:
+      msg: Creating Farm
+   - include: create_farm.ym
