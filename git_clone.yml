@@ -1,0 +1,4 @@
+---
+- git:
+   repo: "https://github.com/rtfee/farm_template.git"
+   dest: "/tmp/ansible/"
