@@ -13,4 +13,7 @@
    - include: git_clone.yml
    - debug:
       msg: Creating Farm
-   - include: create_farm.ym
+   - include: create_farm.yml
+   - debug:
+      msg: Remove Local Repo
+   - include: remove_local_repo.yml
