@@ -16,5 +16,5 @@
   when: farmlaunch|success
   until: serverlaunch.stdout.find("running") != -1
   retries: 15
-  delay: 10
+  delay: 15
   ignore_errors: True
