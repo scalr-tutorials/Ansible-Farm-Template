@@ -5,5 +5,7 @@
 - shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms create-from-template --stdin < /tmp/ansible/jenkins_build.json --envId 53
   register: output
 - debug: var=output
+# Get the farm id
 - debug: msg="{{(output.stdout| from_json).data.id}}"
+#Launch the farm
 - shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms launch --farmId "{{(output.stdout| from_json).data.id}}" --envId 53
