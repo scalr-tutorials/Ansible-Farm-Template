@@ -9,3 +9,12 @@
 - debug: msg="{{(output.stdout| from_json).data.id}}"
 #Launch the farm
 - shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms launch --farmId "{{(output.stdout| from_json).data.id}}" --envId 53
+  register: farmlaunch
+#Get server status
+- shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms list-servers --farmId "{{(output.stdout| from_json).data.id}}" --envId 53 --table --columns status
+  register: serverlaunch
+  when: farmlaunch|success
+  until: serverlaunch.stdout.find("running") != -1
+  retries: 15
+  delay: 10
+  ignore_errors: True
