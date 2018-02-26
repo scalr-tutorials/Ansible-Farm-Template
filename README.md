@@ -2,7 +2,7 @@
 
 ## Create a Scalr Farm via Ansible and Scalr-ctl (Infra as Code)
 
-# Setup instructions
+### Setup instructions
 
 The instructions below are written for Ubuntu 16.04. Adapt as necessary for other distributions.
 
