@@ -21,7 +21,7 @@ pip install scalr-ctl
 #### Instructions
 - Main.yml is the playbook that will be executed, main.yml will call git_clone.yml, create_farm.yml, and remove_local_repo.yml
 - You must update the vars.yml file with your variables
-- The output of the scalr-ctl commands should be in JSON, ensure your config file has json set as the output style. create_farm.yml assumes the directory for the config file is "cliconfig/devtesting.yml" Example:
+- The output of the scalr-ctl commands should be in JSON, ensure your config file has json set as the output style. The create_farm.yml assumes the directory for the config file is "cliconfig/devtesting.yml". Example config file:
 ```
 API_HOST: my.scalr.com
 API_KEY_ID: API_Key_ID
