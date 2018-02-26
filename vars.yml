@@ -1,0 +1,5 @@
+---
+git: enter_git_url_here
+dest: enter_git_path_here
+env: enter_env_id_here
+farm_template: enter_farm_template_name_here
