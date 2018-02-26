@@ -2,16 +2,16 @@
 # Create the farm
 - debug:
    msg: Creating Farm
-- shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms create-from-template --stdin < /tmp/ansible/jenkins_build.json --envId 53
+- shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms create-from-template --stdin < {{dest}}{{farm_template}} --envId {{env}}
   register: output
 - debug: var=output
 # Get the farm id
 - debug: msg="{{(output.stdout| from_json).data.id}}"
 #Launch the farm
-- shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms launch --farmId "{{(output.stdout| from_json).data.id}}" --envId 53
+- shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms launch --farmId "{{(output.stdout| from_json).data.id}}" --envId {{env}}
   register: farmlaunch
 #Get server status
-- shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms list-servers --farmId "{{(output.stdout| from_json).data.id}}" --envId 53 --table --columns status
+- shell: /usr/local/bin/scalr-ctl --config cliconfig/devtesting.yml farms list-servers --farmId "{{(output.stdout| from_json).data.id}}" --envId {{env}} --table --columns status
   register: serverlaunch
   when: farmlaunch|success
   until: serverlaunch.stdout.find("running") != -1
