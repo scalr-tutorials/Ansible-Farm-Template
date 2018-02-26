@@ -1,6 +1,6 @@
 # Ansible-Farm-Template
 
-## Create a Scalr Farm via Ansible and Scalr-ctl (Infra as Code)
+## Create a Scalr Farm via Ansible and Scalr-CTL (Infra as Code)
 
 ### Setup instructions
 
