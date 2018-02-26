@@ -2,4 +2,4 @@
 # Remove the repo for the next playbook run
 - debug:
    msg: remove the local repo
-- shell: rm -rf /tmp/ansible/
+- shell: rm -rf {{dest}}
