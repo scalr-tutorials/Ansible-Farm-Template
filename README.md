@@ -15,8 +15,8 @@ pip install scalr-ctl
 ```
 
 #### Pre Requisites
-- Scalr API keys
-- Scalr farm template
+- Scalr API keys: https://api-explorer.scalr.com/
+- Scalr farm template: https://scalr-wiki.atlassian.net/wiki/spaces/docs/pages/91036762/Farm+Templates
 
 #### Instructions
 - Main.yml is the playbook that will be executed, main.yml will call git_clone.yml, create_farm.yml, and remove_local_repo.yml
@@ -33,4 +33,7 @@ colored_output: true
 envId: '1'
 view: json
 ```
-
+- Run the playbook:
+```
+ansible-playbook main.yml
+```
