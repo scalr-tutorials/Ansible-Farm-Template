@@ -1,0 +1,9 @@
+API_HOST: my.scalr.com
+API_KEY_ID: YOUR_API_KEY
+API_SCHEME: https
+API_SECRET_KEY: YOUR_SECRET_KEY
+SSL_VERIFY_PEER: true
+accountId: '11'
+colored_output: true
+envId: '53'
+view: json
