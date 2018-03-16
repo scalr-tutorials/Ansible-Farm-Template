@@ -1,0 +1,5 @@
+---
+git: https://github.com/scalr/farm_template.git
+dest: /tmp/ansible/
+env: 1
+farm_template: my_farm_template.json
